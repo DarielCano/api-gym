@@ -49,10 +49,12 @@ app.use(express.urlencoded({ extended: true })); // form-urlencoded
 const routesUser = require("./routes/user");
 const routesVisit = require("./routes/visit");
 const routesAccount = require("./routes/account.js");
+const routesReport = require("./routes/report.js");
 
 app.use("/api", routesUser);
 app.use("/api", routesVisit);
 app.use("/api", routesAccount);
+app.use("/api", routesReport);
 
 /* crear servidor y escuchar peticiones http */
 app.listen(port, () => {

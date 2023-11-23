@@ -1,4 +1,4 @@
-const { Model, Schema, model } = require("mongoose");
+const { model, Schema } = require("mongoose");
 
 const ReportSchema = Schema({
   year: { type: String, required: true },
@@ -6,6 +6,8 @@ const ReportSchema = Schema({
     type: Array,
     required: true,
   },
+  priceVisit: { type: String },
+  priceMonth: { type: String },
   dataVisit: {
     type: Array,
     required: true,

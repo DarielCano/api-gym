@@ -3,10 +3,60 @@ const Report = require("../models/Report");
 
 const path = require("path");
 const xl = require("excel4node");
+const { months } = require("../helpers/months.js");
+const visitInfo = [
+  ["Enero", 0],
+  ["Febrero", 0],
+  ["Marzo", 0],
+  ["Abril", 0],
+  ["Mayo", 0],
+  ["Junio", 0],
+  ["Julio", 0],
+  ["Agosto", 0],
+  ["Septiembre", 0],
+  ["Octubre", 0],
+  ["Noviembre", 0],
+  ["Diciembre", 0],
+];
+
+const addVisitCant = async (month) => {
+  const report = await Report.find({
+    year: `${new Date().getFullYear()}`,
+  }).exec();
+  const visitMonth = visitInfo.map((m) =>
+    m[0] == month ? [m[0], (m[1] = m[1] + 1)] : m
+  );
+
+  console.log(month);
+
+  console.log(report);
+  if (report.length === 0) {
+    const newReport = new Report({
+      priceVisit: "0",
+      priceMonth: "0",
+      year: `${new Date().getFullYear()}`,
+      dataVisit: [...visitMonth],
+      dataMonth: [],
+    });
+    newReport.save().then((resp) => {
+      console.log(resp);
+      return true;
+    });
+  } else {
+    const resp1 = await Report.findOneAndUpdate(
+      { year: `${new Date().getFullYear()}` },
+      { dataVisit: [...visitMonth] }
+    ).exec();
+
+    console.log(resp1);
+    return true;
+  }
+};
 
 const addVisit = async (req, res) => {
   const today = new Date();
   const data = req.body;
+  const thisMonth = months(today.getMonth());
 
   const query = await Visit.findOne({
     visitDate: `${
@@ -47,6 +97,8 @@ const addVisit = async (req, res) => {
       users,
     });
 
+    await addVisitCant(thisMonth);
+
     newVisit.save().then((resp) => {
       return res.status(200).send({
         status: "success",
@@ -83,12 +135,16 @@ const addVisit = async (req, res) => {
           ],
         },
         { new: true }
-      ).then(() => {
-        return res.status(200).send({
-          status: "success",
-          message: "Usuario visitante agregado correctamente",
+      )
+        .then(() => {
+          addVisitCant(thisMonth);
+        })
+        .then(() => {
+          return res.status(200).send({
+            status: "success",
+            message: "Usuario visitante agregado correctamente",
+          });
         });
-      });
     } else {
       return res.status(400).send({
         status: "error",
@@ -180,6 +236,10 @@ const exportVisit = async (req, res) => {
     }
   });
 };
+
+/////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////
 
 module.exports = {
   addVisit,
