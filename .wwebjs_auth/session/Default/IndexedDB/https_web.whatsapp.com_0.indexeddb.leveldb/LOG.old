@@ -1,0 +1,23 @@
+2023/12/05-16:30:43.644 6c50 Reusing MANIFEST C:\Users\52461\Desktop\mis_proyectos_www\backend\api-gym\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2023/12/05-16:30:43.647 6c50 Recovering log #2413
+2023/12/05-16:30:43.990 6c50 Reusing old log C:\Users\52461\Desktop\mis_proyectos_www\backend\api-gym\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/002413.log 
+2023/12/05-16:31:16.172 68d0 Level-0 table #2427: started
+2023/12/05-16:31:16.230 68d0 Level-0 table #2427: 1126159 bytes OK
+2023/12/05-16:31:16.232 68d0 Delete type=0 #2413
+2023/12/05-16:31:16.234 68d0 Compacting 1@0 + 1@1 files
+2023/12/05-16:31:16.337 68d0 Generated table #2428@0: 26781 keys, 464339 bytes
+2023/12/05-16:31:16.371 68d0 Generated table #2429@0: 9989 keys, 237873 bytes
+2023/12/05-16:31:16.371 68d0 Compacted 1@0 + 1@1 files => 702212 bytes
+2023/12/05-16:31:16.372 68d0 compacted to: files[ 0 2 46 0 0 0 0 ]
+2023/12/05-16:31:16.373 68d0 Delete type=2 #2427
+2023/12/05-16:31:17.061 3010 Compacting 1@1 + 12@2 files
+2023/12/05-16:31:17.195 3010 Generated table #2430@1: 29723 keys, 2257201 bytes
+2023/12/05-16:31:17.253 3010 Generated table #2431@1: 2682 keys, 2146631 bytes
+2023/12/05-16:31:17.335 3010 Generated table #2432@1: 3043 keys, 2153689 bytes
+2023/12/05-16:31:17.534 3010 Generated table #2433@1: 26388 keys, 2247213 bytes
+2023/12/05-16:31:17.659 3010 Generated table #2434@1: 18048 keys, 2184139 bytes
+2023/12/05-16:31:17.885 3010 Generated table #2435@1: 92968 keys, 2241080 bytes
+2023/12/05-16:31:18.185 3010 Generated table #2436@1: 78122 keys, 1726519 bytes
+2023/12/05-16:31:18.185 3010 Compacted 1@1 + 12@2 files => 14956472 bytes
+2023/12/05-16:31:18.186 3010 compacted to: files[ 0 1 41 0 0 0 0 ]
+2023/12/05-16:31:18.238 3010 Compacting 1@1 + 8@2 files

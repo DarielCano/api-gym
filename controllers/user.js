@@ -71,19 +71,23 @@ const addUser = async (req, res) => {
     const incomeDate = new Date();
 
     const nextMonth =
-      incomeDate.getMonth() + 12 == 11 ? 1 : incomeDate.getMonth() + 2;
+      incomeDate.getMonth() == 11 ? 1 : incomeDate.getMonth() + 1;
 
     const nextYear =
       incomeDate.getMonth() + 1 == 12
         ? incomeDate.getFullYear() + 1
         : incomeDate.getFullYear();
 
-    const stringDate = `${nextYear}/${nextMonth}/${incomeDate.getDate()}`;
+    const stringDate = `${nextYear},${nextMonth},${incomeDate.getDate()}`;
+
     const nextPay = new Date(stringDate);
+
     const newUser = new User({ ...userData, nextPay, incomeDate });
     newUser
       .save()
+
       .then((data) => {
+        addUserPayMonth().then(() => console.log("actualizado"));
         return res.status(200).json({ status: "success", user: data });
       })
       .catch((err) => {
@@ -103,12 +107,15 @@ const addUser = async (req, res) => {
         ? today.getFullYear() + 1
         : today.getFullYear();
 
-    const stringDate = `${nextYear}/${nextMonth}/${incomeDate.getDate()}`;
+    const stringDate = `${nextYear},${nextMonth},${incomeDate.getDate()}`;
     const nextPay = new Date(stringDate);
+
     const newUser = new User({ ...userData, nextPay, incomeDate });
     newUser
       .save()
+
       .then((data) => {
+        addUserPayMonth().then(() => console.log("actualizado"));
         return res.status(200).send({ status: "success", user: data });
       })
       .catch((err) => {
@@ -204,7 +211,7 @@ const updateDate = (req, res) => {
 
   const today = new Date();
   const thisMonth = months(today.getMonth());
-  const nextMonth = today.getMonth() + 12 == 11 ? 1 : today.getMonth() + 2;
+  const nextMonth = today.getMonth() == 11 ? 1 : today.getMonth() + 1;
 
   const nextYear =
     today.getMonth() + 1 == 12 ? today.getFullYear() + 1 : today.getFullYear();

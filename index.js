@@ -10,15 +10,15 @@ const { prueba } = require("./wp/prueba");
 /* conexion a base de datos */
 connection();
 
-/* enviar mensaje wp para solicitar pago */
-/* (async () => {
+/*enviar mensaje wp para solicitar pago */
+(async () => {
   try {
     const cliente = await startAPI();
     programador_tareas(cliente);
   } catch (error) {
     console.log("Error en index", error);
   }
-})(); */
+})();
 
 /* enviar email para solicitar pago */
 /* sendMail(); */
