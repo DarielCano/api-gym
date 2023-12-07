@@ -1,3 +1,6 @@
-2023/12/05-16:31:22.859 4478 Reusing MANIFEST C:\Users\52461\Desktop\mis_proyectos_www\backend\api-gym\.wwebjs_auth\session\Default\Local Storage\leveldb/MANIFEST-000001
-2023/12/05-16:31:22.860 4478 Recovering log #3
-2023/12/05-16:31:22.862 4478 Reusing old log C:\Users\52461\Desktop\mis_proyectos_www\backend\api-gym\.wwebjs_auth\session\Default\Local Storage\leveldb/000003.log 
+2023/12/07-11:17:13.703 7360 Reusing MANIFEST C:\Users\52461\Desktop\mis_proyectos_www\backend\api-gym\.wwebjs_auth\session\Default\Local Storage\leveldb/MANIFEST-000001
+2023/12/07-11:17:13.736 7360 Recovering log #3
+2023/12/07-11:17:13.737 7360 Reusing old log C:\Users\52461\Desktop\mis_proyectos_www\backend\api-gym\.wwebjs_auth\session\Default\Local Storage\leveldb/000003.log 
+2023/12/07-11:19:15.954 7360 Level-0 table #5: started
+2023/12/07-11:19:15.957 7360 Level-0 table #5: 26467 bytes OK
+2023/12/07-11:19:15.958 7360 Delete type=0 #3
